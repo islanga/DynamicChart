@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicChart", "DynamicChart\DynamicChart.csproj", "{D5D3AA74-88B3-477B-B87E-F004403D71B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicChartAPI", "DynamicChartAPI\DynamicChartAPI.csproj", "{9842A392-3FD8-4477-A184-4F4EC940F1D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5D3AA74-88B3-477B-B87E-F004403D71B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D3AA74-88B3-477B-B87E-F004403D71B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D3AA74-88B3-477B-B87E-F004403D71B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D3AA74-88B3-477B-B87E-F004403D71B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9842A392-3FD8-4477-A184-4F4EC940F1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9842A392-3FD8-4477-A184-4F4EC940F1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9842A392-3FD8-4477-A184-4F4EC940F1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9842A392-3FD8-4477-A184-4F4EC940F1D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C20EE981-730E-40EA-A394-66A1F97D2D15}
+	EndGlobalSection
+EndGlobal

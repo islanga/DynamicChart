@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Sales Report";
+}
+
+<div class="container" id="chartContainer" style="height: 400px; width: 60%;"></div>
+
+<script type="text/javascript">
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "NET1 Sales"
+		},
+		data: [
+			{
+				// Change type to "doughnut", "line", "splineArea", etc.
+				type: "column",
+				dataPoints: @Html.Raw(ViewBag.Data)
+			}
+		]
+	});
+	chart.render();
+}
+</script>
