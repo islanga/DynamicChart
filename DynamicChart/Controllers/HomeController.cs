@@ -8,16 +8,18 @@ namespace DynamicChart.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IConfiguration _configuration;
         HttpClient _httpClient = new HttpClient();
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
         {
-            string baseUrl = "https://localhost:7034/api/Sale";
+            var baseUrl = _configuration.GetSection("ApiUrl").Value + "/api/Sale";
             List<SaleData> saleData = new List<SaleData>();
 
             var response = _httpClient.GetAsync(baseUrl);
