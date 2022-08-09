@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Net.Http;
+using System.Text;
 
 namespace DynamicChart.Controllers
 {
@@ -36,8 +38,28 @@ namespace DynamicChart.Controllers
             return View(saleData);
         }
 
-        public IActionResult Privacy()
+        public IActionResult AddSale()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddSale(SaleData saleData)
+        {
+            if (saleData == null)
+            {
+                return NotFound();
+            }
+
+            string data = JsonConvert.SerializeObject(saleData);
+            StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = await _httpClient.PostAsync(_configuration.GetSection("ApiUrl").Value + "/api/Sale", content);
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+
             return View();
         }
 

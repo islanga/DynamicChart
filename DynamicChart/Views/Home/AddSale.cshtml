@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Add Sale";
+}
+
+<div class="container">
+    <form class="row g-3" method="post" asp-controller="Home" asp-action="AddSale">
+      <div class="col-12">Add Sale</div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Month</label>
+        <input type="text" name="SaleMonth" class="form-control" id="inputAddress" placeholder="Month">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Sale Amount</label>
+        <input type="text" name="Sale" class="form-control" id="inputAddress2" placeholder="Sale Amount">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+</div>
