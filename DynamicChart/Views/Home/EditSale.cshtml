@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Edit Sale";
+}
+
+<div class="container">
+    <form class="row g-3" method="post" asp-controller="Home" asp-action="AddSale">
+      <div class="col-12">Edit Sale</div>
+      <div class="col-12">
+        <select class="form-select" asp-items="@(new SelectList(@ViewBag.Sales, "SaleID", "SaleMonth"))"></select>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+</div>

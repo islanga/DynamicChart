@@ -33,6 +33,7 @@ namespace DynamicChart.Controllers
                 display.Wait();
                 saleData = display.Result;
             }
+            ViewBag.Sales = saleData;
             ViewBag.Data = JsonConvert.SerializeObject(saleData.Select(prop => new { label = prop.SaleMonth, y = prop.Sale }).ToList());
 
             return View(saleData);
@@ -40,6 +41,25 @@ namespace DynamicChart.Controllers
 
         public IActionResult AddSale()
         {
+            return View();
+        }
+
+        public IActionResult EditSale()
+        {
+            var baseUrl = _configuration.GetSection("ApiUrl").Value + "/api/Sale";
+            List<SaleData> saleData = new List<SaleData>();
+
+            var response = _httpClient.GetAsync(baseUrl);
+            response.Wait();
+            var test = response.Result;
+            if (test.IsSuccessStatusCode)
+            {
+                var display = test.Content.ReadAsAsync<List<SaleData>>();
+                display.Wait();
+                saleData = display.Result;
+            }
+            ViewBag.Sales = saleData;
+
             return View();
         }
 
